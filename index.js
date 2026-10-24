@@ -5,7 +5,7 @@ app.use(express.json());
 
 // log every incoming request
 app.use((req, res, next) => {
-  console.log(`${new Date().toISOString()} ${req.method} ${req.url} body=${JSON.stringify(req.body)}`);
+  console.log(`[pid ${process.pid}] ${new Date().toISOString()} ${req.method} ${req.url} body=${JSON.stringify(req.body)}`);
   next();
 });
 
